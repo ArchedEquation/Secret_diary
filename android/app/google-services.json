@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011920507193",
+    "project_id": "secret-diary-70001",
+    "storage_bucket": "secret-diary-70001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011920507193:android:1007ac88f02271103dd8e8",
+        "android_client_info": {
+          "package_name": "com.example.secret_diary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUyd6BtKepckhn57omnBSWRGxrD4YiNs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
