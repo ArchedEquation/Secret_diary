@@ -53,12 +53,21 @@ class _QuoteScreenState extends State<QuoteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      backgroundColor: const Color(0xffe6fff2),
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        title: const Text(
-          "Q U O T E  R A N D O M I Z E R",
-          style: TextStyle(color: Colors.white),
+        toolbarHeight: 150,
+        title: const Text('Q U O T E  R A N D O M I Z E R'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.primaryContainer
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
         ),
       ),
       body: Center(
@@ -66,7 +75,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
           child: Column(
             children: [
               Card(
-                color: Colors.lightGreenAccent,
+                color: const Color(0xffe6fff2),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4),
                 ),
@@ -114,7 +123,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
 
                                 Text(
                                   "This page would provide you a random quote to keep yourself moving ahead",
-                                  maxLines: 2,
+                                  maxLines: 3,
                                   style: TextStyle(
                                       color: Theme.of(context)
                                           .colorScheme
@@ -130,7 +139,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                 ),
               ),
               Card(
-                color: Colors.lightGreenAccent,
+                color: const Color(0xffe6fff2),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4),
                 ),
@@ -152,6 +161,8 @@ class _QuoteScreenState extends State<QuoteScreen> {
                     ElevatedButton(
                         onPressed: _getQuote,
                         style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                Theme.of(context).colorScheme.primaryContainer,
                             fixedSize: const Size(300, 30)),
                         child: const Text("Click me UwU")),
                   ],
@@ -161,7 +172,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                 height: 24,
               ),
               Card(
-                color: Colors.transparent,
+                color: const Color(0xffe6fff2),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4)),
                 child: Text(
