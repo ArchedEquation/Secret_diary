@@ -138,31 +138,38 @@ class _QuoteScreenState extends State<QuoteScreen> {
                 child: Column(
                   children: [
                     Text(
-                      "Click this button for a random positive quote",
+                      "Click this button for a random  quote",
                       maxLines: 2,
                       style: TextStyle(
                           color: Theme.of(context).colorScheme.primary,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
                     ),
                     const Icon(
                       Icons.arrow_downward_sharp,
-                      size: 42,
+                      size: 72,
                     ),
                     ElevatedButton(
                         onPressed: _getQuote,
+                        style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(300, 30)),
                         child: const Text("Click me UwU")),
                   ],
                 ),
               ),
+              const SizedBox(
+                height: 24,
+              ),
               Card(
-                color: Colors.lightGreenAccent,
+                color: Colors.transparent,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4)),
                 child: Text(
                   currentQuote,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22),
                 ),
               )
             ],
