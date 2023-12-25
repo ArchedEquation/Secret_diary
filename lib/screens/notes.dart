@@ -8,24 +8,31 @@ class NotesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      backgroundColor: const Color(0xffe6fff2),
       appBar: AppBar(
-        title: const Text(
-          "Your Secret Notes",
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
         actions: [
           IconButton(
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-            },
-            icon: const Icon(Icons.exit_to_app),
-            color: Theme.of(context).colorScheme.secondaryContainer,
-          )
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
+              icon: const Icon(Icons.exit_to_app),
+              color: Theme.of(context).colorScheme.secondaryContainer)
         ],
+        toolbarHeight: 150,
+        title: const Text('E X P R E S S  Y O U R S E L F'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.primaryContainer
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
       ),
-      
       body: const Column(
         children: [
           Expanded(child: NoteDisplay()),

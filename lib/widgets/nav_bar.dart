@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:secret_diary/screens/about_me.dart';
+
 import 'package:secret_diary/screens/about_you.dart';
 import 'package:secret_diary/screens/emotion.dart';
 import 'package:secret_diary/screens/notes.dart';
@@ -22,7 +22,7 @@ class _NavBarScreenState extends State<NavBarScreen> {
     AboutYouScreen(),
     EmotionScreen(),
     QuoteScreen(),
-    AboutMeScreen(),
+   
   ];
   void onTabTapped(int index) {
     setState(() {
@@ -54,10 +54,7 @@ class _NavBarScreenState extends State<NavBarScreen> {
                 icon: const Icon(Icons.question_answer_sharp),
                 label: "Random Quotes",
                 backgroundColor: Theme.of(context).colorScheme.primary),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: "About Me",
-                backgroundColor: Theme.of(context).colorScheme.primary),
+           
           ]),
     );
   }

@@ -15,30 +15,22 @@ class _AboutYouScreenState extends State<AboutYouScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      backgroundColor: const Color(0xffe6fff2),
       appBar: AppBar(
-        title: const Text(
-          "A B O U T  Y O U",
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-      ),
-      body: ListView(
-        children: [
-          const SizedBox(height: 30),
-          Container(
-            margin: const EdgeInsets.only(
-              top: 10,
-              bottom: 20,
-              left: 20,
-              right: 20,
-            ),
-            width: 200,
-            child: Image.asset(
-              'assets/images/user-cat.png',
+        toolbarHeight: 150,
+        title: const Text('E X P R E S S  Y O U R S E L F'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.primaryContainer
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-        ],
+        ),
       ),
     );
   }

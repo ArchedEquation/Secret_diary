@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:secret_diary/screens/auth.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
-import 'package:secret_diary/screens/nav_bar.dart';
+import 'package:secret_diary/widgets/nav_bar.dart';
 
 import 'package:secret_diary/screens/splash.dart';
 
