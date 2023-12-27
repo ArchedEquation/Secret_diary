@@ -18,7 +18,7 @@ class _AboutYouScreenState extends State<AboutYouScreen> {
       backgroundColor: const Color(0xffe6fff2),
       appBar: AppBar(
         toolbarHeight: 150,
-        title: const Text('E X P R E S S  Y O U R S E L F'),
+        title: const Text('P  R  O  F  I  L  E'),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
