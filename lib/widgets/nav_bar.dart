@@ -5,6 +5,7 @@ import 'package:secret_diary/screens/about_you.dart';
 import 'package:secret_diary/screens/emotion.dart';
 import 'package:secret_diary/screens/notes.dart';
 import 'package:secret_diary/screens/quote.dart';
+import 'package:secret_diary/screens/userprofilepage.dart';
 
 class NavBarScreen extends StatefulWidget {
   const NavBarScreen({super.key});
@@ -17,11 +18,11 @@ class NavBarScreen extends StatefulWidget {
 
 class _NavBarScreenState extends State<NavBarScreen> {
   int Myindex = 0;
-  final List<Widget> _children = const [
-    NotesScreen(),
-    AboutYouScreen(),
-    EmotionScreen(),
-    QuoteScreen(),
+  final List<Widget> _children =  [
+    const NotesScreen(),
+    UserProfilePage(),
+    const EmotionScreen(),
+    const QuoteScreen(),
    
   ];
   void onTabTapped(int index) {

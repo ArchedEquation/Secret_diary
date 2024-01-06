@@ -19,15 +19,21 @@ class _QuoteScreenState extends State<QuoteScreen> {
     'If at first, you do not succeed, skydiving is not for you.',
     'You are not a mess, you are a masterpiece in progress.',
     'You are  not lazy, You are in energy-saving mode.',
+    'If opportunity does not knock, build a door  and maybe install a peephole for good measure',
+    'I am not late, everyone else is just early.',
+    'Do not watch the clock; do what it does. Keep going, and occasionally check if there is cake',
+    'If life gives you lemons, make sure they are not disguised as hand grenades',
+    'If you stumble, make it part of the dance – the cha-cha-cha of resilience'
   ];
+
   late Timer timer;
   bool cangetquote = true;
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic((const Duration(hours: 12)), (Timer t) {
+    timer = Timer.periodic((const Duration(seconds: 3)), (Timer t) {
       setState(() {
-        cangetquote = true;
+        cangetquote = false;
       });
     });
   }
@@ -36,7 +42,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
   String currentQuote = '';
 
   void _getQuote() {
-    if (cangetquote) {
+    if (!cangetquote) {
       int index = random.nextInt(quotes.length);
       setState(() {
         currentQuote = quotes[index];
