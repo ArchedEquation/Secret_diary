@@ -52,11 +52,35 @@ class UserProfilePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  backgroundImage: NetworkImage(userDocument['imageurl']),
+                Transform(
+                  transform: Matrix4.translationValues(0.0, -100.0, 0.0),
+                  child: CircleAvatar(
+                    radius: 100,
+                    backgroundImage: NetworkImage(userDocument['imageurl']),
+                  ),
                 ),
-                Text('Name: ${userDocument['username']}'),
-                Text('Email: ${userDocument['email']}'),
+                Card(
+                  shape: RoundedRectangleBorder(),
+                  elevation: 0,
+                  color: Colors.transparent,
+                  margin: const EdgeInsets.all(12.0),
+                  child: Text(
+                    'Name: ${userDocument['username']}',
+                    style: const TextStyle(fontSize: 24),
+                  ),
+                ),
+
+                Transform(
+                  transform: Matrix4.translationValues(0, -100, 0),
+                  child: Card(
+                      elevation: 0,
+                      color: Colors.transparent,
+                      margin: const EdgeInsets.all(12.0),
+                      child: Text(
+                        'Email: ${userDocument['email']}',
+                        style: const TextStyle(fontSize: 24),
+                      )),
+                ),
                 // Add more user details as needed
               ],
             ),
