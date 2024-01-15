@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:secret_diary/screens/auth.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
+import 'package:secret_diary/screens/on-boarding.dart';
 import 'package:secret_diary/widgets/nav_bar.dart';
 
 import 'package:secret_diary/screens/splash.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasData) {
             return const NavBarScreen();
           }
-          return const AuthScreen();
+          return const OnBoardingScreen();
         }),
       ),
     );
