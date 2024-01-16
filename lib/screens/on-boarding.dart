@@ -41,6 +41,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Column(
         children: [
           Expanded(
@@ -103,14 +104,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     curve: Curves.bounceIn);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.primary,
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
               child: Text(
                 currentIndex == contents.length - 1 ? "Continue" : "Next",
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.black),
               ),
             ),
           )
