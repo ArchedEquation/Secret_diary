@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:secret_diary/widgets/message_bubble.dart';
+
 
 class NoteDisplay extends StatelessWidget {
   NoteDisplay({super.key});
@@ -34,25 +34,20 @@ class NoteDisplay extends StatelessWidget {
             itemCount: loadedNotes.length,
             itemBuilder: (ctx, index) {
               final notes = loadedNotes[index].data();
-              final nextnote = index + 1 < loadedNotes.length
-                  ? loadedNotes[index + 1].data()
-                  : null;
+
               final currentNoteid = notes['userId'];
-              final nextnoteid = nextnote != null ? nextnote['userId'] : null;
-              final nextuserissame = nextnoteid == currentNoteid;
-              if (nextuserissame) {
-                return MessageBubble.next(
-                  message: notes['text'],
-                  isMe: authenticatedUser.uid == currentNoteid,
-                );
-              } else {
-                MessageBubble.first(
-                  userImage: notes['userImage'],
-                  username: notes['user'],
-                  message: notes['text'],
-                  isMe: authenticatedUser.uid == currentNoteid,
-                );
-              }
+              return Container(
+                height: 250,
+                width: 250,
+                child: Card(
+                  color: Theme.of(context).colorScheme.secondaryContainer,
+                  child: Center(
+                      child: Text(
+                    notes['text'],
+                    style: const TextStyle(color: Colors.black, fontSize: 24),
+                  )),
+                ),
+              );
             });
       },
     );
